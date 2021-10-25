@@ -1,0 +1,66 @@
+{
+  "name": "safe-json-parse-and-stringify",
+  "version": "0.1.0",
+  "description": "provide safe jsonParse and jsonStringify",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RichieChoo/safe-json-parse-and-stringify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RichieChoo/safe-json-parse-and-stringify/issues"
+  },
+  "homepage": "https://github.com/RichieChoo/safe-json-parse-and-stringify",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "tslint 'src/**/*.ts'",
+    "prettier": "prettier --parser typescript --write '**/*.ts'",
+    "precommit": "lint-staged",
+    "postversion": "git push origin master --tags --no-verify",
+    "prepublishOnly": "npm run test && npm run build"
+  },
+  "author": "richiechoo1993",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "26.0.24",
+    "@types/node": "11.13.0",
+    "husky": "7.0.1",
+    "jest": "27.0.6",
+    "lint-staged": "11.1.1",
+    "prettier": "2.3.2",
+    "rimraf": "3.0.2",
+    "ts-jest": "27.0.4",
+    "ts-node": "10.1.0",
+    "tslint": "6.1.3",
+    "tslint-config-prettier": "1.18.0",
+    "typescript": "4.3.5"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --parser typescript --write",
+      "git add"
+    ]
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
+  },
+  "dependencies": {
+    "@types/json-stringify-safe": "^5.0.0",
+    "json-stringify-safe": "^5.0.1"
+  }
+}
