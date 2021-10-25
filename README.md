@@ -28,7 +28,6 @@ import { jsonParse ,jsonStringify } from 'safe-json-parse-and-stringify';
 #### demo
 
 ```js
-import jsonParse from '@es/universal-common/codec/jsonParse';
 jsonParse('[1,2,3]', []);     // => {{JSON.stringify(jsonParse('[1,2,3]', []))}}
 jsonParse([1,2,3], []);       // => {{JSON.stringify(jsonParse([1,2,3], []))}}
 jsonParse('', []);            // => {{JSON.stringify(jsonParse('', []))}}
