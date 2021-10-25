@@ -5,11 +5,12 @@
     "target": "es2015",
     "strict": true,
     "noEmit": false,
-    "allowSyntheticDefaultImports": false,
+    "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
     "outDir": "./dist",
     "sourceMap": true,
-    "declaration": true
+    "declaration": true,
+    "esModuleInterop": true
   },
   "include": [
     "src/**/*"

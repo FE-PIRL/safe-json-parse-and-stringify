@@ -39,3 +39,7 @@ jsonParse({a:1}, {});         // => {{JSON.stringify(jsonParse({a:1}, {}))}}
 ### jsonStringify
 
 >see more at https://github.com/moll/json-stringify-safe
+
+### cloneDeep
+
+>see more at https://www.lodashjs.com/docs/lodash.cloneDeep

@@ -1,3 +1,3 @@
 export { default as jsonParse } from './jsonParse';
-import * as stringify from 'json-stringify-safe';
-export { stringify as jsonStringify };
+export { default as jsonStringify } from 'json-stringify-safe';
+export { default as cloneDeep } from 'lodash.clonedeep';

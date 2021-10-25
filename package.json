@@ -61,6 +61,8 @@
   },
   "dependencies": {
     "@types/json-stringify-safe": "^5.0.0",
-    "json-stringify-safe": "^5.0.1"
+    "@types/lodash.clonedeep": "^4.5.6",
+    "json-stringify-safe": "^5.0.1",
+    "lodash.clonedeep": "^4.5.0"
   }
 }
