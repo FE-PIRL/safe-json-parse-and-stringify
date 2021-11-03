@@ -84,13 +84,26 @@ the result.
 
 ### cloneDeep
 
-This method is loosely based on the [structured clone algorithm](https://mdn.io/Structured_clone_algorithm) and supports cloning arrays, array buffers, booleans, date objects, maps, numbers, Object objects, regexes, sets, strings, symbols, and typed arrays. The own enumerable properties of arguments objects are cloned as plain objects. An empty object is returned for uncloneable values such as error objects, functions, DOM nodes, and WeakMaps.
-And it recursively clones value.
+Using JSON.parse(JSON.stringify(obj)) for deep clone is unpredictable and not safe.Use `cloneDeep` instead.
 
-#### Since
+Example
 
-1.0.0
+```javascript
+const a = {};
+a.a = a;
+const b = JSON.parse(JSON.stringify(a));
+/*
+Uncaught TypeError: Converting circular structure to JSON
+    --> starting at object with constructor 'Object'
+    --- property 'a' closes the circle
+    at JSON.stringify (<anonymous>)
+    at <anonymous>:3:27
+*/
+```
 
+#### Details
+
+This method is loosely based on the [structured clone algorithm](https://mdn.io/Structured_clone_algorithm) and supports cloning arrays, array buffers, booleans, date objects, maps, numbers, Object objects, regexes, sets, strings, symbols, and typed arrays. The own enumerable properties of arguments objects are cloned as plain objects. An empty object is returned for uncloneable values such as error objects, functions, DOM nodes, and WeakMaps. ***And it recursively clones value.***
 #### Arguments
 
 value (\*): The value to recursively clone.
